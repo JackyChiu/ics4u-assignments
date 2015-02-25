@@ -2,113 +2,56 @@
 
 using namespace std;
 
-void ways(int [][8],int,int,int);
+void boardvalue(int [][8]);
+int ways(int,int,int);
 int fc,fr; //final column & row
+
+int board[8][8]={0};
 
 int main() {
     
-    int board[8][8]={0};
     int sc,sr; //start column & row
-    int steps=1;
+    int steps=0;
     
     cin>>sc;
     cin>>sr;
     cin>>fc;
     cin>>fr;
     
-    board[sc][sr]=1;
-    board[fc][fr]=1;
+    boardvalue(board);
+    cout<<"shortest amount of steps"<<ways(sc,sr,steps)<<endl;
     
-    ways(board,sc,sr,steps);
     
     return 0;
 }
 
-void ways(int board[][8],int sc,int sr,int steps)
+void boardvalue(int board [][8])
 {
-    if(board[sc][sr]==board[fc][fr])
+    for(int a=1;a<8;a++)
     {
-        cout<<"The shortest amount of steps is "<<steps<<endl;
+        for(int b=0;b<8;b++)
+        {
+            board[a][b]=999;
+        }
     }
-    
+}
+
+int ways(int c,int r,int steps)
+{
+    if(c<=8&&c>=1&&r<=8&&r>=1&&(steps<board[c][r]))
+    {
+        board[c][r]=steps;
+        return ways(c-2,r+1,steps+1);
+        return ways(c-1,r+2,steps+1);
+        return ways(c+1,r+2,steps+1);
+        return ways(c+2,r+1,steps+1);
+        return ways(c+2,r-1,steps+1);
+        return ways(c+1,r-2,steps+1);
+        return ways(c-1,r-2,steps+1);
+        return ways(c-2,r-1,steps+1);
+    }
     else
     {
-        for(int count=1;count<=8;count++)
-        {
-            switch(count)
-            {
-                case 1:
-                    
-                    if((sc+2<8&&sc+2>1)&&(sr+1<8&&sr+1>1))
-                    {
-                        ways(board,sc-2,sr+1,steps+1);
-                    }
-                    
-                    break;
-                    
-                case 2:
-                    
-                    if((sc+1<8&&sc+1>1)&&(sr+2<8&&sr+2>1))
-                    {
-                        ways(board,sc+1,sr+2,steps+1);
-                    }
-                    
-                    break;
-                    
-                case 3:
-                    
-                    if((sc-1<8&&sc-1>1)&&(sr+2<8&&sr+2>1))
-                    {
-                        ways(board,sc-1,sr+2,steps+1);
-                    }
-                    
-                    break;
-                    
-                case 4:
-                    
-                    if((sc-2<8&&sc-2>1)&&(sr+1<8&&sr+1>1))
-                    {
-                        ways(board,sc-2,sr+1,steps+1);
-                    }
-                    
-                    break;
-                    
-                case 5:
-                    
-                    if((sc-2<8&&sc-2>1)&&(sr-1<8&&sr-1>1))
-                    {
-                        ways(board,sc-2,sr-1,steps+1);
-                    }
-                    
-                    break;
-                    
-                case 6:
-                    
-                    if((sc-1<8&&sc-1>1)&&(sr-2<8&&sr-2>1))
-                    {
-                        ways(board,sc-1,sr-2,steps+1);
-                    }
-                    
-                    break;
-                    
-                case 7:
-                    
-                    if((sc+1<8&&sc+1>1)&&(sr-2<8&&sr-2>1))
-                    {
-                        ways(board,sc+1,sr-2,steps+1);
-                    }
-                    
-                    break;
-                    
-                case 8:
-                    
-                    if((sc+2<8&&sc+2>1)&&(sr-1<8&&sr-1>1))
-                    {
-                        ways(board,sc+2,sr-1,steps+1);
-                    }
-                    
-                    break;
-            }
-        }
+        return steps;
     }
 }
