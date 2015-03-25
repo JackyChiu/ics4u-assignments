@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -7,31 +8,48 @@ int total_comb(int,int);
 void all_combination(int,int,int,int[],int[]);
 void next_combination(int,int,int,int[],int[]);
 
+ifstream inPat( "/Users/i2Chinese/Documents/School/ICS4U/ics4u-assigments/assigment2/Q1/pat.in");
+ofstream outPat( "/Users/i2Chinese/Documents/School/ICS4U/ics4u-assigments/assigment2/Q1/pat.out");
 
 int main() {
     
     int *acombination;
     int *binary;
-    int n,r,check;
+    int pair,n,r,check;
     
-    cin>>n;
-    cin>>r;
+    if (! inPat){
+        cerr<<"File could not be open\n";
+        exit(1);}
     
-    binary= new int [n];
-    acombination= new int [r];
-    check=r;
+    inPat>>pair;
     
-    for(int a=0;a<n;a++)
+    for(int a=0;a<pair;a++)
     {
-        binary[a]=0;
+        
+        outPat<<"The bit patterns are: "<<endl;
+        
+        inPat>>n;
+        inPat>>r;
+        
+        binary= new int [n];
+        acombination= new int [r];
+        check=r;
+        
+        for(int a=0;a<n;a++)
+        {
+            binary[a]=0;
+        }
+        
+        for(int a=1;a<=r;a++)
+        {
+            acombination[a]=a;
+        }
+        
+        all_combination(n,r,check,acombination,binary);
+        
+        outPat<<endl;
+        
     }
-    
-    for(int a=1;a<=r;a++)
-    {
-        acombination[a]=a;
-    }
-    
-    all_combination(n,r,check,acombination,binary);
     
     return 0;
 }
@@ -56,18 +74,18 @@ int total_comb(int n,int r)
 
 void all_combination(int n,int r,int check,int acombination[],int binary[])
 {
-    for(int a=0;a<r;a++)
+    for(int a=0;a<r+1;a++)
     {
-        binary[acombination[a]]=1;
+        binary[acombination[a]-1]=1;
     }
     
     for(int a=0;a<n;a++)
     {
-        cout<<binary[a];
+        outPat<<binary[a];
     }
-    cout<<endl;
+    outPat<<endl;
     
-    for(int b=1;b<=total_comb(n,r);b++)
+    for(int b=1;b<total_comb(n,r);b++)
     {
         next_combination(n,r,check,acombination,binary);
     }
@@ -92,23 +110,14 @@ void next_combination(int n,int r,int check,int acombination[],int binary[])
         acombination[a]=acombination[check]+a-check;
     }
     
-    for(int a=0;a<r;a++)
+    for(int a=0;a<r+1;a++)
     {
-        binary[acombination[a]]=1;
+        binary[acombination[a]-1]=1;
     }
-    
-    for(int a=1;a<=r-1;a++)
-    {
-        cout<<acombination[a]<<", ";
-    }
-    cout<<acombination[r]<<endl;
     
     for(int a=0;a<n;a++)
     {
-        cout<<binary[a];
+        outPat<<binary[a];
     }
-    cout<<endl;
+    outPat<<endl;
 }
-
-
-
