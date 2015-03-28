@@ -7,26 +7,26 @@ class Combinatorics
 public:
     Combinatorics();
     void setvalue(int,int);
-    void all_combination();
-    void next_combination();
+    void allcombination();
+    void triangle(int);
     
 private:
     int factorial(int);
     int total_comb(int,int);
     int n;
     int r;
-    int i;
-    int a[];
+    int check;
+    int combination[];
 };
 
 Combinatorics::Combinatorics()
 {
     n=1;
     r=0;
-    i=0;
-    for(int x=0;x<r;x++)
+    check=0;
+    for(int x=0;x<=r;x++)
     {
-        a[x]=0;
+        combination[x]=x;
     }
 }
 
@@ -34,20 +34,21 @@ void Combinatorics::setvalue(int nn,int rr)
 {
     n=nn;
     r=rr;
-    i=r-1;
-    for(int x=0;x<r;x++)
+    check=r;
+    
+    for(int a=1;a<=r;a++)
     {
-        a[x]=x+1;
+        combination[a]=a;
     }
 }
 
-int Combinatorics::factorial(int x)
+int Combinatorics::factorial(int c)
 {
     int factorial=1;
     
-    for(int a=1;a<=x;a++)
+    for(int x=1;x<=c;x++)
     {
-        factorial=factorial*a;
+        factorial=factorial*x;
     }
     return factorial;
 }
@@ -59,39 +60,46 @@ int Combinatorics::total_comb(int nn,int rr)
     return total_comb;
 }
 
-void Combinatorics::all_combination()
+void Combinatorics::allcombination()
 {
-    r--;
-    for(int x=0;x<r;x++)
+    for(int a=1;a<=r-1;a++)
     {
-        cout<<a[x]<<", ";
+        cout<<combination[a]<<", ";
     }
-    cout<<a[r]<<endl;
+    cout<<combination[r]<<endl;
     
     for(int b=1;b<total_comb(n,r);b++)
     {
-        next_combination();
+        while(combination[check]==(n-r+check))
+        {
+            check--;
+        }
+        combination[check]++;
+        for(int a=check;a<=r;a++)
+        {
+            combination[a]=combination[check]+a-check;
+        }
+        
+        for(int a=1;a<=r-1;a++)
+        {
+            cout<<combination[a]<<", ";
+        }
+        cout<<combination[r]<<endl;
     }
 }
 
-void Combinatorics::next_combination()
+void Combinatorics::triangle(int nn)
 {
-    while(a[i]==(n-r+i))
-    {
-        i--;
-    }
-    a[i]++;
+    cout<<"Tringle"<<endl;
     
-    for(int j=i+1;j<=r;j++)
+    for(int x=0;x<n;x++)
     {
-        a[j]=a[i]+j-i;
+        for(int b=0;b<=x;b++)
+        {
+            cout<<factorial(x)/((factorial(b)*(factorial(x-b))))<<" ";
+        }
+        cout<<endl;
     }
-    
-    for(int x=0;x<r;x++)
-    {
-        cout<<a[x]<<", ";
-    }
-    cout<<a[r]<<endl;
 }
 
 int main()
@@ -102,5 +110,6 @@ int main()
     
     Combinatorics x;
     x.setvalue(nn,rr);
-    x.all_combination();
+    x.allcombination();
+    x.triangle(nn);
 }
