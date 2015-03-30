@@ -1,9 +1,10 @@
 # ics4u-assignments
 Assingments for ICS4U at NHS
 
-Problem 1: Pattern Generator
+###Problem 1: Pattern Generator
 Input file: pat.in 
-Output file: pat.out 
+Output file: pat.out
+
 Write a program that repeatedly reads two numbers n and k and prints all bit patterns of length n with k ones in descending order (when the bit patterns are considered as binary numbers). You may assume that 30 >= n > 0, 8 > k >= 0, and n >= k. The first number in the input gives the number of pairs n and k. The numbers n and k are separated by a single space. Leading zeroes in a bit pattern should be included. See the example below. 
 
 
@@ -31,7 +32,7 @@ The bit patterns are
 0011
 
 
-Problem 2:When in Rome...
+###Problem 2: When in Rome...
 If the Roman Empire had not fallen, then Rome would surely have discovered electricity and used electronic calculators; however, the Romans used Roman Numerals! Your task is to implement a simple Roman Calculator which accepts two Roman Numerals and outputs the sum in Roman Numerals. You may assume that numbers greater than 1000 will not occur in the input. Output numbers greater than 1000 are illegal and should generate the message CONCORDIA CUM VERITATE (In Harmony with Truth). 
 The input consists of a number, indicating the number of test cases, followed by this many test cases. Each test case consists of a single line with two numbers in Roman Numerals separated by a + along with an = at the end. There are no separating spaces. 
 For each test case the output is a copy of the input with the Roman Numeral that represents the sum. Outputs for different test cases are separated by a blank line. 
@@ -43,12 +44,14 @@ The Roman Numerals used by the Romans evolved over many years, and so there are 
 For example: II = 2; IX = 9; CXIII = 113; LIV = 54; XXXVIII = 38; XCIX = 99. 
 
 Sample input
+
 3
 VII+II=
 XXIX+X=
 M+I=
 
 Sample output
+
 VII+II=IX
 XXIX+X=XXXIX
 M+I=CONCORDIA CUM VERITATE
@@ -66,7 +69,7 @@ For example: to convert 67 to its Roman equivalent:
 So 67=LXVII
 
 
-Problem#3: Aromatic Numbers
+###Problem#3: Aromatic Numbers
 
 An aromatic number is a number of the form ARARAR…AR, where each A is an Arabic digit, and each R is a Roman numeral. Each pair AR contributes a value described below, and by adding or subtracting these values together we get the value of the entire aromatic
 number.
@@ -103,7 +106,7 @@ Output for Sample Input 1
 
 
 
-Problem 4: Word Search 
+###Problem 4: Word Search 
 The word search puzzle below contains a secret message. To get this message, you have to find all the clue words in the puzzle (the words shown beside it) and circle them. Then you read any un-circled letters that remain from top left to bottom right to get the secret message. The clue words might appear horizontally, vertically, or diagonally. They might read forwards, backwards, downwards or upwards. Clue words can share any number of letters. Each clue word appears exactly once in the puzzle. 
 The Puzzle 							 
 
