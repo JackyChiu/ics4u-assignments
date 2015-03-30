@@ -10,28 +10,28 @@ Write a program that repeatedly reads two numbers n and k and prints all bit pat
 
 Sample input
 
-3
-2 1
-2 0
-4 2
+    3
+    2 1
+    2 0
+    4 2
 
 Sample output
 
 The bit patterns are
 
-10
-01
+    10
+    01
 
 The bit patterns are
-00
+    00
 
 The bit patterns are
-1100
-1010
-1001
-0110
-0101
-0011
+    1100
+    1010
+    1001
+    0110
+    0101
+    0011
 
 
 ###Problem 2: When in Rome...
@@ -47,16 +47,16 @@ For example: II = 2; IX = 9; CXIII = 113; LIV = 54; XXXVIII = 38; XCIX = 99.
 
 Sample input
 
-3
-VII+II=
-XXIX+X=
-M+I=
+    3
+    VII+II=
+    XXIX+X=
+    M+I=
 
 Sample output
 
-VII+II=IX
-XXIX+X=XXXIX
-M+I=CONCORDIA CUM VERITATE
+    VII+II=IX
+    XXIX+X=XXXIX
+    M+I=CONCORDIA CUM VERITATE
 
 
 Hint: there is one possible and simple algorithm for converting Integers to Romans:
@@ -64,12 +64,12 @@ Take a set {I, IV, V, IX, X, XL, L, XC, C, CD, D, CM, M}
 To convert an Integer to Roman start subtracting the numbers from the set from largest to the smallest , collecting the numbers that can be subtracted, until your Integer becomes 0.
 For example: to convert 67 to its Roman equivalent:
 
-67-50=17//collect L
-17-10=7//collect X
-7-5=2//collect V
-2-1=1//collect I
-1-1=0//collect I
-So 67=LXVII
+    67-50=17//collect L
+    17-10=7//collect X
+    7-5=2//collect V
+    2-1=1//collect I
+    1-1=0//collect I
+    So 67=LXVII
 
 
 ###Problem#3: Aromatic Numbers
@@ -90,18 +90,18 @@ The output is the decimal value of the given aromatic number.
 
 Sample Input 1
 
-3M1D2C
+    3M1D2C
 
 Output for Sample Input 1
 
-3700
+    3700
 
 Sample Input 2
 
-2I3I2X9V1X
+    2I3I2X9V1X
 Output for Sample Input 1
 
--16
+    -16
 
 
 
@@ -118,43 +118,43 @@ The word search puzzle below contains a secret message. To get this message, you
 The Puzzle 							 
 
 The Clue Words
-ADDICTIVE 
-BAKING 
-BARS 
-BITTERSWEET 
-BROWNIES 
-CAKES 
-CANDY 
-CHIPS 
-CHOCOLATIERS 
-COCOA 
-CONFECTIONERY 
-COOKIES 
-CREAM PIE 
-CUPCAKE 
-DARK 
-DECADENT 
-DELICIOUS 
-DESSERT 
-DRINKS 
-FILLING 
-FONDUE 
-FOOD 
-FUDGE 
-ICE CREAM 
-ICING 
-INGREDIENT 
-MILK 
-MOUSSE 
-PUDDING 
-SEMISWEET 
-SUGAR 
-SWISS 
-SYRUP 
-TREAT 
-TRUFFLES 
-UNSWEETENED 
-WHITE
+    ADDICTIVE 
+    BAKING 
+    BARS 
+    BITTERSWEET 
+    BROWNIES 
+    CAKES 
+    CANDY 
+    CHIPS 
+    CHOCOLATIERS 
+    COCOA 
+    CONFECTIONERY 
+    COOKIES 
+    CREAM PIE 
+    CUPCAKE 
+    DARK 
+    DECADENT 
+    DELICIOUS 
+    DESSERT 
+    DRINKS 
+    FILLING 
+    FONDUE 
+    FOOD 
+    FUDGE 
+    ICE CREAM 
+    ICING 
+    INGREDIENT 
+    MILK 
+    MOUSSE 
+    PUDDING 
+    SEMISWEET 
+    SUGAR 
+    SWISS 
+    SYRUP 
+    TREAT 
+    TRUFFLES 
+    UNSWEETENED 
+    WHITE
 
 
 In this case, the secret message is “CHOCOLATE ORIGINATES FROM THE SEEDS OF THE THEOBROAMA CACAO TREE”. The locations of the words in the puzzle are shown on the next page. 
@@ -162,64 +162,65 @@ DATA31.txt (DATA32.txt for the second try) will contain 5 test cases. Each test 
 Note that the sample input on the next page contains only a single test case, but the real data files will contain 5 test cases, one after another, with no blank lines in between. 
 Sample Input 
 
-17 17 
-KLIMTSEINWORBCHOC 
-CGOLYNASEMISWEETT 
-EHNCSDENETEEWSNUO 
-RCIIOENIIGFILLING 
-SIOPKCLADNABFTESE 
-KFRNSAOFCEIOOMCTV 
-NRHEFDBAFTRSOEHEI 
-ICATAERTTUIGDDOGT 
-RORDSNCECCRONSCNC 
-DOWEFTRTEUTTUIOII 
-GKHTASPCIRPOHFLDD 
-NIIEWMRUEOICOTADD 
-IETESEPSRCNNAHTUA 
-CSESAESIIYDEBKIPO 
-ITIMBERLEUSAROEAM 
-AWFUDGECEARCAYRSO 
-SUGARDTESSUOMRSEE 
-37 
-ADDICTIVE 
-BAKING 
-BARS 
-BITTERSWEET 
-BROWNIES 
-CAKES 
-CANDY 
-CHIPS 
-CHOCOLATIERS 
-COCOA 
-CONFECTIONERY 
-COOKIES 
-CREAM PIE 
-CUPCAKE 
-DARK 
-DECADENT 
-DELICIOUS 
-DESSERT 
-DRINKS 
-FILLING 
-FONDUE 
-FOOD 
-FUDGE 
-ICE CREAM 
-ICING 
-INGREDIENT 
-MILK 
-MOUSSE 
-PUDDING 
-SEMISWEET 
-SUGAR 
-SWISS 
-SYRUP 
-TREAT 
-TRUFFLES 
-UNSWEETENED 
-WHITE
+    17 17 
+    KLIMTSEINWORBCHOC 
+    CGOLYNASEMISWEETT 
+    EHNCSDENETEEWSNUO 
+    RCIIOENIIGFILLING 
+    SIOPKCLADNABFTESE 
+    KFRNSAOFCEIOOMCTV 
+    NRHEFDBAFTRSOEHEI 
+    ICATAERTTUIGDDOGT 
+    RORDSNCECCRONSCNC 
+    DOWEFTRTEUTTUIOII 
+    GKHTASPCIRPOHFLDD 
+    NIIEWMRUEOICOTADD 
+    IETESEPSRCNNAHTUA 
+    CSESAESIIYDEBKIPO 
+    ITIMBERLEUSAROEAM 
+    AWFUDGECEARCAYRSO 
+    SUGARDTESSUOMRSEE 
+    37 
+    ADDICTIVE 
+    BAKING 
+    BARS 
+    BITTERSWEET 
+    BROWNIES 
+    CAKES 
+    CANDY 
+    CHIPS 
+    CHOCOLATIERS 
+    COCOA 
+    CONFECTIONERY 
+    COOKIES 
+    CREAM PIE 
+    CUPCAKE 
+    DARK 
+    DECADENT 
+    DELICIOUS 
+    DESSERT 
+    DRINKS 
+    FILLING 
+    FONDUE 
+    FOOD 
+    FUDGE 
+    ICE CREAM 
+    ICING 
+    INGREDIENT 
+    MILK 
+    MOUSSE 
+    PUDDING 
+    SEMISWEET 
+    SUGAR 
+    SWISS 
+    SYRUP 
+    TREAT 
+    TRUFFLES 
+    UNSWEETENED 
+    WHITE
 Sample Output 
-CHOCOLATEORIGINATESFROMTHESEEDSOFTHETHEOBROAMACACAOTREE 
+
+    CHOCOLATEORIGINATESFROMTHESEEDSOFTHETHEOBROAMACACAOTREE 
 Locations of the Words (Shown for Reference Only) 
 
 
