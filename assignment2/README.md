@@ -9,12 +9,14 @@ Write a program that repeatedly reads two numbers n and k and prints all bit pat
 
 
 Sample input
+
 3
 2 1
 2 0
 4 2
 
 Sample output
+
 The bit patterns are
 
 10
@@ -61,6 +63,7 @@ Hint: there is one possible and simple algorithm for converting Integers to Roma
 Take a set {I, IV, V, IX, X, XL, L, XC, C, CD, D, CM, M}
 To convert an Integer to Roman start subtracting the numbers from the set from largest to the smallest , collecting the numbers that can be subtracted, until your Integer becomes 0.
 For example: to convert 67 to its Roman equivalent:
+
 67-50=17//collect L
 17-10=7//collect X
 7-5=2//collect V
@@ -86,14 +89,18 @@ Output Specification
 The output is the decimal value of the given aromatic number.
 
 Sample Input 1
+
 3M1D2C
 
 Output for Sample Input 1
+
 3700
 
 Sample Input 2
+
 2I3I2X9V1X
 Output for Sample Input 1
+
 -16
 
 
@@ -109,7 +116,6 @@ Output for Sample Input 1
 ###Problem 4: Word Search 
 The word search puzzle below contains a secret message. To get this message, you have to find all the clue words in the puzzle (the words shown beside it) and circle them. Then you read any un-circled letters that remain from top left to bottom right to get the secret message. The clue words might appear horizontally, vertically, or diagonally. They might read forwards, backwards, downwards or upwards. Clue words can share any number of letters. Each clue word appears exactly once in the puzzle. 
 The Puzzle 							 
-
 
 The Clue Words
 ADDICTIVE 
@@ -155,6 +161,7 @@ In this case, the secret message is “CHOCOLATE ORIGINATES FROM THE SEEDS OF TH
 DATA31.txt (DATA32.txt for the second try) will contain 5 test cases. Each test case starts with a line containing two integers R and C separated by a space character. R and C represent the number of rows and columns in the board (1 ≤ R, C ≤ 30). This is followed by R lines, each containing C uppercase letters. This is the puzzle board. The next line contains an integer M representing the number of clue words (M < 100) and then the next M lines contain one clue word each. Clue words will be written in uppercase and will contain fewer than 100 characters, but they might contain spaces, apostrophes or other punctuation, all of which should be ignored when searching for the words on the board. 
 Note that the sample input on the next page contains only a single test case, but the real data files will contain 5 test cases, one after another, with no blank lines in between. 
 Sample Input 
+
 17 17 
 KLIMTSEINWORBCHOC 
 CGOLYNASEMISWEETT 
