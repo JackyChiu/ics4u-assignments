@@ -16,32 +16,24 @@ int main()
     char input[100];
     int i=0;
     int sum=0;
-    int repeat=0;
     
-    cin>>repeat;
-    
-    for(int x=0;x<repeat;x++)
+    while(input[i-1]!='=')
     {
-        
-        while(input[i-1]!='=')
-        {
-            cin>>input[i];
-            i++;
-        }
-        
-        seperate(input,a,b);
-        
-        int *avalue;
-        int *bvalue;
-        
-        avalue=new int [alength];
-        bvalue=new int [blength];
-        
-        sum=givevalue(a,b,avalue,bvalue);
-        
-        printroman(sum);
-        
+        cin>>input[i];
+        i++;
     }
+    
+    seperate(input,a,b);
+    
+    int *avalue;
+    int *bvalue;
+    
+    avalue=new int [alength];
+    bvalue=new int [blength];
+    
+    sum=givevalue(a,b,avalue,bvalue);
+    
+    printroman(sum);
     
     return 0;
 }
@@ -173,6 +165,7 @@ int givevalue(char a[],char b[],int avalue[],int bvalue[])
 
 void printroman(int sum)
 {
+    
     if(sum>1000)
     {
         cout<<"CONCORDIA CUM VERITATE"<<endl;
@@ -180,76 +173,90 @@ void printroman(int sum)
     }
     while(sum>0)
     {
+    start:
+        
         if((sum-900)>=0)
         {
             cout<<"CM";
             sum=sum-900;
+            goto start;
         }
         
         if((sum-500)>=0)
         {
             cout<<"D";
             sum=sum-500;
+            goto start;
         }
         
         if((sum-400)>=0)
         {
             cout<<"CD";
             sum=sum-400;
+            goto start;
         }
         
         if((sum-100)>=0)
         {
             cout<<"C";
             sum=sum-100;
+            goto start;
         }
         
         if((sum-90)>=0)
         {
             cout<<"XC";
             sum=sum-90;
+            goto start;
         }
         
         if((sum-50)>=0)
         {
             cout<<"L";
             sum=sum-50;
+            goto start;
         }
         
         if((sum-40)>=0)
         {
             cout<<"XL";
             sum=sum-40;
+            goto start;
         }
         
         if((sum-10)>=0)
         {
             cout<<"X";
             sum=sum-10;
+            goto start;
         }
         
         if((sum-9)>=0)
         {
             cout<<"IX";
             sum=sum-9;
+            goto start;
         }
         
         if((sum-5)>=0)
         {
             cout<<"V";
             sum=sum-5;
+            goto start;
         }
         
         if((sum-4)>=0)
         {
             cout<<"IV";
             sum=sum-4;
+            goto start;
         }
         
         if((sum-1)>=0)
         {
             cout<<"I";
             sum=sum-1;
+            goto start;
         }
     }
     cout<<endl;
