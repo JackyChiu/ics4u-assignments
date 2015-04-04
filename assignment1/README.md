@@ -1,7 +1,7 @@
 # ics4u-assignments
 Assingments for ICS4U at NHS
 
-Problem 1: Dice
+###Problem 1: Dice
 Problem Description
 Antonia and David are playing a game. Each player starts with 100 points.
 The game uses standard six-sided dice and is played in rounds. During one round, each player rolls one die. The player with the lower roll loses the number of points shown on the higher die. If both players roll the same number, no points are lost by either player.
@@ -13,15 +13,17 @@ Output Specification
 The output will consist of two lines. On the first line, output the number of points that Antonia has after all rounds have been played. On the second line, output the number of points that David has after all rounds have been played.
 
 Sample Input
-4
-5 6
-6 6
-4 3
-5 2
+
+    4
+    5 6
+    6 6
+    4 3
+    5 2
 
 Output for Sample Input
-94
-91
+
+    94
+    91
 
 Explanation of Output for Sample Input
 After the first round, David wins, so Antonia loses 6 points. After the second round, there is a tie and no points are lost. After the third round, Antonia wins, so David loses 4 points. After the fourth round, Antonia wins, so David loses 5 points. In total, Antonia has lost 6 points and David has lost 9 points.
@@ -30,7 +32,7 @@ After the first round, David wins, so Antonia loses 6 points. After the second r
 
 
 
-Problem 2: Federal Voting Age
+###Problem 2: Federal Voting Age
 Problem Description
 For the big election on February 27, 2007, the government has commissioned an electronic voting system, and you have been hired as a sub-subcontractor for this very grand programming project.
 Your task is to write the system that determines whether a given person is old enough to vote. The voting age is 18, so given someone’s birthday, you must determine whether that person will be 18 years of age on the day of the election.
@@ -40,21 +42,24 @@ Output Specification
 For each date in the input, output a line with either “Yes” if the voter is eligible to vote, or “No” otherwise.
 
 Sample Input
-5
-1933 10 29
-1989 2 28
-1961 11 23
-1999 12 31
-1989 2 27
+
+    5
+    1933 10 29
+    1989 2 28
+    1961 11 23
+    1999 12 31
+    1989 2 27
+
 
 Output for Sample Input
-Yes
-No
-Yes
-No
-Yes
 
-Problem 3: Don’t pass me the ball!
+    Yes
+    No
+    Yes
+    No
+    Yes
+
+###Problem 3: Don’t pass me the ball!
 Problem Description
 A CCC soccer game operates under slightly different soccer rules. A goal is only counted if the 4 players, in order, who touched the ball prior to the goal have jersey numbers that are in strictly  increasing numeric order with the highest number being the goal scorer.
 Players have jerseys numbered from 1 to 99 (and each jersey number is worn by exactly one player).
@@ -67,22 +72,28 @@ Output Specification
 The output will be one line containing the number of possible scoring combinations that could have J as the goal scoring jersey number.
 
 Sample Input 1
-4
+
+    4
 Output for Sample Input 1
-1
+
+    1
 
 Sample Input 2
-2
+
+    2
 Output for Sample Input 2
-0
+
+    0
 
 Sample Input 3
-90
+
+    90
 Output for Sample Input 3
-113564
+
+    113564
 
 
-Problem 4: Cool Numbers
+###Problem 4: Cool Numbers
 Problem Description
 Eric likes interesting numbers like 64. It turns out that 64 is both a square and a cube, since 64 = 82
 and 64 = 43 . Eric calls these numbers cool. Write a program that helps Eric figure out how many integers in a given range are cool.
