@@ -23,9 +23,11 @@ The bit patterns are
     01
 
 The bit patterns are
+
     00
 
 The bit patterns are
+
     1100
     1010
     1001
