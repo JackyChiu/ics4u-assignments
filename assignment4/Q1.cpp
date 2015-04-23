@@ -129,6 +129,7 @@ void Octal::octalvalue()
 istream &operator>>(istream& cin,Octal& b)
 {
     cin>>b.input;
+    b.output=b.input;
     return cin;
 }
 
@@ -145,6 +146,8 @@ int main()
     Octal B(31);
     Octal C;
     
+    cin>>C;
+    cout<<C<<endl;
     cout<<A<<endl;
     cout<<B<<endl;
     
