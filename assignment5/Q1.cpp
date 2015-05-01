@@ -7,9 +7,9 @@ class Point
     friend ostream &operator<<(ostream&,Point&);
 public:
     Point(int=0,int=0);
-    void setvalue(int,int);
+    virtual void setPoint(int,int);
     int gety() {return x;};
-    int getx();
+    int getx() {return y;};
 protected:
     int x;
     int y;
@@ -21,7 +21,7 @@ Point::Point(int inputx,int inputy)
     y=inputy;
 }
 
-void Point::setvalue(int a,int b)
+void Point::setPoint(int a,int b)
 {
     x=a;
     y=b;
@@ -38,7 +38,8 @@ class Square:public Point
     friend ostream &operator<<(ostream&,Square&);
 public:
     Square(int=1,int=0,int=0);
-    void setvalue(int);
+    void setBase(int);
+    int getbase() {return base;};
     int area();
 protected:
     int base;
@@ -47,10 +48,10 @@ protected:
 Square::Square(int b,int x,int y)
 {
     base=b;
-    Point::setvalue(x,y);
+    Point::setPoint(x,y);
 }
 
-void Square::setvalue(int b)
+void Square::setBase(int b)
 {
     base=b;
 }
@@ -71,7 +72,8 @@ class Cube: public Square
     friend ostream &operator<<(ostream&,Cube&);
 public:
     Cube(int=1,int=0,int=0);
-    void setvalue(int);
+    void setLength(int);
+    int getlength() {return length;};
     int area();
     int volume();
 protected:
@@ -81,11 +83,11 @@ protected:
 Cube::Cube(int l,int x,int y)
 {
     length=l;
-    Square::setvalue(l);
-    Point::setvalue(x,y);
+    setBase(l);
+    setPoint(x,y);
 }
 
-void Cube::setvalue(int l)
+void Cube::setLength(int l)
 {
     length=l;
 }
@@ -108,7 +110,20 @@ ostream &operator<<(ostream&cout,Cube&b)
 
 int main()
 {
-    Cube(5,7,8);
+    Cube C(5,7,8);
+    
+    cout<<"X-cord is "<<C.getx()<<endl;
+    cout<<"Y-cord is "<<C.gety()<<endl;
+    cout<<"Base is "<<C.getbase()<<endl;
+    cout<<"Length is "<<C.getlength()<<endl;
+    
+    
+    C.setLength(10);
+    C.setBase(4);
+    C.setPoint(2,2);
+    
+    cout<<"Area is "<<C.area()<<endl;
+    cout<<"Volume is "<<C.volume()<<endl;
     
     
     return 0;
