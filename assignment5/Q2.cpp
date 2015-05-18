@@ -2,129 +2,147 @@
 
 using namespace std;
 
-class Point
+class Position
 {
-    friend ostream &operator<<(ostream&,Point&);
+    friend ostream &operator<<(ostream&,Position&);
 public:
-    Point(int=0,int=0);
-    virtual void setPoint(int,int);
-    int gety() {return x;};
-    int getx() {return y;};
+    Position(int=0);
+    int getposition();
+    void setposition(int);
 protected:
-    int x;
-    int y;
+    int p;
 };
 
-Point::Point(int inputx,int inputy)
+Position::Position(int position)
 {
-    x=inputx;
-    y=inputy;
+    p=position;
 }
 
-void Point::setPoint(int a,int b)
+int Position::getposition()
 {
-    x=a;
-    y=b;
+    return p;
 }
 
-ostream &operator<<(ostream& cout,Point &b)
+void Position::setposition(int position)
 {
-    cout<<b.x<<","<<b.y;
+    p=position;
+}
+
+ostream &operator<<(ostream &cout,Position &b)
+{
+    cout<<b.p;
     return cout;
 }
 
-class Square:public Point
+class Velocity:public Position
 {
-    friend ostream &operator<<(ostream&,Square&);
+    friend ostream &operator<<(ostream&,Velocity&);
 public:
-    Square(int=1,int=0,int=0);
-    void setBase(int);
-    int getbase() {return base;};
-    int area();
+    Velocity(int=0,int=0);
+    int getvelocity();
+    void setvelocity(int);
+    void origin();
 protected:
-    int base;
+    int v;
 };
 
-Square::Square(int b,int x,int y)
+Velocity::Velocity(int velocity,int position)
 {
-    base=b;
-    Point::setPoint(x,y);
+    v=velocity;
+    setposition(position);
 }
 
-void Square::setBase(int b)
+int Velocity::getvelocity()
 {
-    base=b;
+    return v;
 }
 
-int Square::area()
+void Velocity::setvelocity(int velocity)
 {
-    return (base*base);
+    v=velocity;
 }
 
-ostream &operator<<(ostream&cout,Square&b)
+void Velocity::origin()
 {
-    cout<<b.base;
+    if(v*p>0)
+    {
+        cout<<"away form origin";
+    }
+    
+    else
+    {
+        cout<<"towards origin";
+    }
+}
+
+ostream &operator<<(ostream &cout,Velocity &b)
+{
+    cout<<b.v;
     return cout;
 }
 
-class Cube: public Square
+class Acceleration:public Velocity
 {
-    friend ostream &operator<<(ostream&,Cube&);
+    friend ostream &operator<<(ostream&,Acceleration&);
 public:
-    Cube(int=1,int=0,int=0);
-    void setLength(int);
-    int getlength() {return length;};
-    int area();
-    int volume();
+    Acceleration(int=0,int=0,int=0);
+    int getacceleration();
+    void setacceleration(int);
+    void speeding();
+    
 protected:
-    int length;
+    int a;
 };
 
-Cube::Cube(int l,int x,int y)
+Acceleration::Acceleration(int acceleration,int velocity,int position)
 {
-    length=l;
-    setBase(l);
-    setPoint(x,y);
+    a=acceleration;
+    setvelocity(velocity);
+    setposition(position);
 }
 
-void Cube::setLength(int l)
+int Acceleration::getacceleration()
 {
-    length=l;
+    return a;
 }
 
-int Cube::area()
+void Acceleration::setacceleration(int acceleration)
 {
-    return (6*(Square::area()));
+    a=acceleration;
 }
 
-int Cube::volume()
+void Acceleration::speeding()
 {
-    return (length*Square::area());
+    if(a*v>0)
+    {
+        cout<<"speeding up";
+    }
+    
+    else
+    {
+        cout<<"slowing down";
+    }
 }
 
-ostream &operator<<(ostream&cout,Cube&b)
+ostream &operator<<(ostream &cout,Acceleration &b)
 {
-    cout<<b.length;
+    cout<<b.a;
     return cout;
 }
 
 int main()
 {
-    Cube C(5,7,8);
+    Acceleration A(2,3,5);
     
-    cout<<"X-cord is "<<C.getx()<<endl;
-    cout<<"Y-cord is "<<C.gety()<<endl;
-    cout<<"Base is "<<C.getbase()<<endl;
-    cout<<"Length is "<<C.getlength()<<endl;
+    cout<<"The position is "<<A.getposition()<<endl;
+    cout<<"The velocity is "<<A.getvelocity()<<endl;
+    cout<<"The acceleration is "<<A.getacceleration()<<endl;
     
-    
-    C.setLength(10);
-    C.setBase(4);
-    C.setPoint(2,2);
-    
-    cout<<"Area is "<<C.area()<<endl;
-    cout<<"Volume is "<<C.volume()<<endl;
-    
+    cout<<"The object is moving ";
+    A.origin();
+    cout<<" and ";
+    A.speeding();
+    cout<<endl;
     
     return 0;
 }
