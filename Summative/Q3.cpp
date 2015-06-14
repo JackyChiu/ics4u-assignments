@@ -123,12 +123,6 @@ void Nim::selectComputerMove()
                 total[i]=total[i]-1;
             }
         }
-        cout<<endl;
-        cout<<mult[0]<<endl;
-        cout<<mult[1]<<endl;
-        cout<<mult[2]<<endl;
-        cout<<endl;
-        
         //odd mult[i] + any other odd mult[i] == smartamount
         if(mult[0]%2!=0)
         {
